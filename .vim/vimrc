@@ -1,0 +1,35 @@
+syntax on
+
+set exrc
+set guicursor=
+set relativenumber
+set nohlsearch
+set hidden
+set noerrorbells
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set nu
+set nowrap
+set smartcase
+set noswapfile
+set nobackup
+set incsearch
+set timeoutlen=1000 ttimeoutlen=0
+
+
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'preservim/nerdtree'
+call plug#end()
+
+let $FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+
+nnoremap <C-p> :Files <cr>
+nnoremap <C-\> :NERDTreeToggle <cr>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
