@@ -215,7 +215,8 @@ assign [class="Brave-browser"] $ws1
 assign [class="Google-chrome"] $ws1
 
 # workspace 2
-assign [class="X-terminal-emulator"] $ws2
+#assign [class="X-terminal-emulator"] $ws2 # not work in arch, need specific terminal name
+assign [class="Alacritty"] $ws2
 
 # Workspace 3
 assign [class="Code"] $ws3
@@ -227,6 +228,7 @@ assign [class="Gedit"] $ws3
 # Workspace 4
 assign [class="Clementine"] $ws4
 assign [class="Spotify"] $ws4
+for_window [class="Spotify"] move to workspace $ws4
 
 # Workspace 5
 assign [class="discord"] $ws5
