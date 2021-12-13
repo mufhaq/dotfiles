@@ -180,6 +180,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         #position top
+        #mode hide
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
 }
 
@@ -219,18 +220,18 @@ assign [class="Google-chrome"] $ws1
 assign [class="Alacritty"] $ws2
 
 # Workspace 3
-assign [class="Code"] $ws3
-assign [class="jetbrains-goland"] $ws3
-assign [class="jetbrains-webstorm"] $ws3
-assign [class="jetbrains-datagrip"] $ws3
-assign [class="Gedit"] $ws3
+assign [class="Clementine"] $ws3
+assign [class="Spotify"] $ws3
+for_window [class="Spotify"] move to workspace $ws3
 
 # Workspace 4
-assign [class="Clementine"] $ws4
-assign [class="Spotify"] $ws4
-for_window [class="Spotify"] move to workspace $ws4
+assign [class="discord"] $ws4
+assign [class="Microsoft Teams - Preview"] $ws4
+assign [class="zoom"] $ws4
 
 # Workspace 5
-assign [class="discord"] $ws5
-assign [class="Microsoft Teams - Preview"] $ws5
-assign [class="zoom"] $ws5
+assign [class="Code"] $ws5
+assign [class="jetbrains-goland"] $ws5
+assign [class="jetbrains-webstorm"] $ws5
+assign [class="jetbrains-datagrip"] $ws5
+assign [class="Gedit"] $ws5
