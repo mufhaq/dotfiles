@@ -220,6 +220,7 @@ assign [class="Google-chrome"] $ws1
 assign [class="Alacritty"] $ws2
 
 # Workspace 3
+assign [class="Pavucontrol"] $ws3
 assign [class="Clementine"] $ws3
 assign [class="Spotify"] $ws3
 for_window [class="Spotify"] move to workspace $ws3
