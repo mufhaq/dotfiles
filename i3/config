@@ -183,6 +183,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
         #position top
+        #mode hide
 }
 
 
@@ -191,6 +192,7 @@ bar {
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #workspace_layout tabbed
 #hide_edge_borders both
+exec_always picom --experimental-backends -b
 for_window [class="^.*"] border pixel 0
 exec_always nitrogen --restore
 
@@ -220,13 +222,13 @@ bindsym --release XF86AudioLowerVolume exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release XF86AudioMute exec pkill -SIGRTMIN+11 i3blocks
 
 # Workspace 1
-assign [class="Brave-browser"] $ws1
-# assign [class="Firefox"] $ws1 # Broken, assign in workspace 1, but opened in workspace 2
-assign [class="Google-chrome"] $ws1
+#assign [class="X-terminal-emulator"] $ws1 # not work in arch, need specific terminal name
+assign [class="Alacritty"] $ws1
 
 # workspace 2
-#assign [class="X-terminal-emulator"] $ws2 # not work in arch, need specific terminal name
-assign [class="Alacritty"] $ws2
+assign [class="Brave-browser"] $ws2
+# assign [class="Firefox"] $ws2 # Broken, assign in workspace 1, but opened in workspace 2
+assign [class="Google-chrome"] $ws2
 
 # Workspace 3
 assign [class="Pavucontrol"] $ws3
@@ -247,6 +249,4 @@ assign [class="Microsoft Teams - Preview"] $ws5
 assign [class="zoom"] $ws5
 
 gaps inner 15
-border_radius 5
-
-exec_always picom --experimental-backends -b
+border_radius 10
