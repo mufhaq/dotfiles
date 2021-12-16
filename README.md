@@ -7,5 +7,5 @@
     - [picom](https://github.com/yshui/picom)
     - [rofi](https://github.com/davatorium/rofi)
 - script from:
-    - [i3blocks-contrib](https://github.com/vivien/i3blocks-contrib) **move all sub-directiries from i3blocks-contrib**
+    - [i3blocks-contrib](https://github.com/vivien/i3blocks-contrib)
     - [i3-volume](https://github.com/hastinbe/i3-volume)
