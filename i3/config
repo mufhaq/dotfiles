@@ -48,7 +48,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
-#bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -181,13 +181,14 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        position top
-        #mode hide
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        #position top
 }
 
 
+
 # ==========User Defined Config==========
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #workspace_layout tabbed
 #hide_edge_borders both
 for_window [class="^.*"] border pixel 0
@@ -228,25 +229,24 @@ assign [class="Google-chrome"] $ws1
 assign [class="Alacritty"] $ws2
 
 # Workspace 3
-assign [class="Code"] $ws3
-assign [class="jetbrains-goland"] $ws3
-assign [class="jetbrains-webstorm"] $ws3
-assign [class="jetbrains-datagrip"] $ws3
-assign [class="Gedit"] $ws3
+assign [class="Pavucontrol"] $ws3
+assign [class="Clementine"] $ws3
+assign [class="Spotify"] $ws3
+for_window [class="Spotify"] move to workspace $ws3
 
 # Workspace 4
-assign [class="Pavucontrol"] $ws4
-assign [class="Clementine"] $ws4
-assign [class="Spotify"] $ws4
-for_window [class="Spotify"] move to workspace $ws4
+assign [class="Code"] $ws4
+assign [class="jetbrains-goland"] $ws4
+assign [class="jetbrains-webstorm"] $ws4
+assign [class="jetbrains-datagrip"] $ws4
+assign [class="Gedit"] $ws4
 
 # Workspace 5
 assign [class="discord"] $ws5
 assign [class="Microsoft Teams - Preview"] $ws5
 assign [class="zoom"] $ws5
 
-gaps inner 10
+gaps inner 15
+border_radius 5
 
-exec_always picom
-
-exec alacritty
+exec_always picom --experimental-backends -b
