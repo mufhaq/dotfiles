@@ -189,4 +189,4 @@ assign [class="Microsoft Teams - Preview"] $ws5
 assign [class="zoom"] $ws5
 
 gaps inner 15
-border_radius 10
+#border_radius 10
