@@ -133,7 +133,7 @@ bar {
 #workspace_layout tabbed
 #hide_edge_borders both
 exec_always picom --experimental-backends -b
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 exec_always nitrogen --restore
 gaps inner 10
 #border_radius 10
