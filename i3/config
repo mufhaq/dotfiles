@@ -135,6 +135,8 @@ bar {
 exec_always picom --experimental-backends -b
 for_window [class="^.*"] border pixel 0
 exec_always nitrogen --restore
+gaps inner 10
+#border_radius 10
 
 # custom config for change focus
 bindsym $mod+h focus left
@@ -162,13 +164,13 @@ bindsym --release XF86AudioLowerVolume exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release XF86AudioMute exec pkill -SIGRTMIN+11 i3blocks
 
 # Workspace 1
-#assign [class="X-terminal-emulator"] $ws1 # not work in arch, need specific terminal name
-assign [class="Alacritty"] $ws1
+assign [class="Brave-browser"] $ws1
+# assign [class="Firefox"] $ws1 # Broken, assign in workspace 1, but opened in workspace 2
+assign [class="Google-chrome"] $ws1
 
 # workspace 2
-assign [class="Brave-browser"] $ws2
-# assign [class="Firefox"] $ws2 # Broken, assign in workspace 1, but opened in workspace 2
-assign [class="Google-chrome"] $ws2
+#assign [class="X-terminal-emulator"] $ws2 # not work in arch, need specific terminal name
+assign [class="Alacritty"] $ws2
 
 # Workspace 3
 assign [class="Pavucontrol"] $ws3
@@ -187,6 +189,3 @@ assign [class="Gedit"] $ws4
 assign [class="discord"] $ws5
 assign [class="Microsoft Teams - Preview"] $ws5
 assign [class="zoom"] $ws5
-
-gaps inner 15
-#border_radius 10
