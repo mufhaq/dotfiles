@@ -132,11 +132,11 @@ bar {
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #workspace_layout tabbed
 #hide_edge_borders both
-exec_always picom --experimental-backends -b
-for_window [class="^.*"] border pixel 2
+exec_always --no-startup-id picom --experimental-backends -b
+for_window [class="^.*"] border pixel 3
 exec_always nitrogen --restore
 gaps inner 10
-#border_radius 10
+border_radius 0
 
 # custom config for change focus
 bindsym $mod+h focus left
@@ -171,19 +171,20 @@ assign [class="Google-chrome"] $ws1
 # workspace 2
 #assign [class="X-terminal-emulator"] $ws2 # not work in arch, need specific terminal name
 assign [class="Alacritty"] $ws2
+assign [class="kitty"] $ws2
 
 # Workspace 3
-assign [class="Pavucontrol"] $ws3
-assign [class="Clementine"] $ws3
-assign [class="Spotify"] $ws3
-for_window [class="Spotify"] move to workspace $ws3
+assign [class="Code"] $ws3
+assign [class="jetbrains-goland"] $ws3
+assign [class="jetbrains-webstorm"] $ws3
+assign [class="jetbrains-datagrip"] $ws3
+assign [class="Gedit"] $ws3
 
 # Workspace 4
-assign [class="Code"] $ws4
-assign [class="jetbrains-goland"] $ws4
-assign [class="jetbrains-webstorm"] $ws4
-assign [class="jetbrains-datagrip"] $ws4
-assign [class="Gedit"] $ws4
+assign [class="Pavucontrol"] $ws4
+assign [class="Clementine"] $ws4
+assign [class="Spotify"] $ws4
+for_window [class="Spotify"] move to workspace $ws4
 
 # Workspace 5
 assign [class="discord"] $ws5
