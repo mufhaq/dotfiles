@@ -134,8 +134,8 @@ bar {
 #hide_edge_borders both
 exec_always --no-startup-id picom --experimental-backends -b
 for_window [class="^.*"] border pixel 3
-exec_always nitrogen --restore
-gaps inner 10
+exec nitrogen --restore
+#gaps inner 10
 border_radius 0
 
 # custom config for change focus
