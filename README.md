@@ -2,6 +2,10 @@
 
 ## Note:
 - Change the environment variable from source script file if i3blocks.conf not work
+- zsh custom plugins:
+    - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+    - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+    - [zsh-completions](https://github.com/zsh-users/zsh-completions)
 - applications:
     - [i3-gaps-rounded](https://github.com/resloved/i3)
     - [picom](https://github.com/yshui/picom)
