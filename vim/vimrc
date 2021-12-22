@@ -38,7 +38,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'flazz/vim-colorschemes'
 call plug#end()
 
-colo molokai
+colo gruvbox
 set bg=dark
 hi Normal guibg=NONE ctermbg=NONE
 
