@@ -10,8 +10,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set nu
-set mouse=a
-set nowrap
+set mouse=
 set smartcase
 set noswapfile
 set nobackup
@@ -36,10 +35,15 @@ Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/jsonc.vim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
-colo spacegray
+colo molokai
 set bg=dark
+hi Normal guibg=NONE ctermbg=NONE
+
+""" Customize colors
+hi Pmenu ctermbg=black ctermfg=white
 
 let NERDTreeShowHidden=1
 let $FZF_DEFAULT_COMMAND="find . ! -path '*.git*' ! -path '*node_modules*'"
