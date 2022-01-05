@@ -1,0 +1,14 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "typescript",
+        "javascript",
+        "python",
+        "php",
+        "html",
+        "css"
+    ],
+    "typescript.suggestionActions.enabled": false,
+    "javascript.suggestionActions.enabled": false,
+    "prettier.printWidth": 120,
+    "prettier.tabWidth": 4
+}
