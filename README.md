@@ -14,3 +14,6 @@
     - [i3blocks-contrib](https://github.com/vivien/i3blocks-contrib)
     - [i3-volume](https://github.com/hastinbe/i3-volume)
 - create scripts/ dir inside ~/.config/i3/
+- resize image for i3lock-color:
+
+        convert -resize $(xdpyinfo | grep dimensions | cut -d\  -f7 | cut -dx -f1) source.jpg target.png
