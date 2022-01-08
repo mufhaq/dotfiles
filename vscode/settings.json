@@ -1,0 +1,16 @@
+{
+    "workbench.editor.enablePreview": false,
+    "workbench.list.smoothScrolling": true,
+    "editor.fontSize": 16,
+    "workbench.colorTheme": "One Dark Pro Monokai Darker",
+    "editor.smoothScrolling": true,
+    "editor.cursorStyle": "block",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.printWidth": 120,
+    "prettier.tabWidth": 4,
+    "workbench.startupEditor": "none",
+    "editor.minimap.enabled": false,
+    "window.menuBarVisibility": "toggle",
+    "workbench.iconTheme": "material-icon-theme"
+}
