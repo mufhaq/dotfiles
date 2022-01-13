@@ -16,4 +16,4 @@
 - create scripts/ dir inside ~/.config/i3/
 - resize image for i3lock-color:
 
-        convert -resize $(xdpyinfo | grep dimensions | cut -d\  -f7 | cut -dx -f1) source.jpg target.png
+      convert -resize $(xdpyinfo | grep dimensions | cut -d\  -f7 | cut -dx -f1) source.jpg target.png
