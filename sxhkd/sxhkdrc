@@ -30,6 +30,10 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     xbacklight -dec 5
 
+# lock screen
+super + x
+    betterlockscreen -l
+
 #
 # bspwm hotkeys
 #
