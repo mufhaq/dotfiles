@@ -36,6 +36,7 @@ Plug 'neoclide/jsonc.vim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'flazz/vim-colorschemes'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 colo gruvbox
