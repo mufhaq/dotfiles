@@ -151,7 +151,8 @@ bindsym $mod+l focus right
 # config for lock
 # use this if you don't have images
 #bindsym $mod+Shift+l exec --no-startup-id i3lock -c 000000
-bindsym $mod+Shift+l exec --no-startup-id i3lock -i ~/.config/i3/images/mountains-nature-sunset.png
+#bindsym $mod+Shift+l exec --no-startup-id i3lock -i ~/.config/i3/images/mountains-nature-sunset.png
+bindsym $mod+Shift+l exec --no-startup-id betterlockscreen -l
 
 # config for alt+tab
 bindsym Mod1+Tab workspace next
@@ -164,10 +165,10 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
-# reload status bar if volume button pressed and change value
-bindsym --release XF86AudioRaiseVolume exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release XF86AudioLowerVolume exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release XF86AudioMute exec pkill -SIGRTMIN+11 i3blocks
+# reload status bar if volume button pressed and change value (you can disable if user polybar)
+#bindsym --release XF86AudioRaiseVolume exec pkill -SIGRTMIN+11 i3blocks
+#bindsym --release XF86AudioLowerVolume exec pkill -SIGRTMIN+11 i3blocks
+#bindsym --release XF86AudioMute exec pkill -SIGRTMIN+11 i3blocks
 
 # Workspace 1
 assign [class="Brave-browser"] $ws1
