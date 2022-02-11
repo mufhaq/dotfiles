@@ -10,8 +10,14 @@ HISTFILE=~/.cache/zsh/history
 HISTSIZE=10000
 SAVEHIST=10000
 
-setopt autocd extendedglob nomatch append_history share_history
-unsetopt beep notify
+unsetopt beep
+unsetopt notify
+
+setopt autocd
+setopt extendedglob
+setopt nomatch
+setopt append_history
+setopt share_history
 
 # key bindings
 bindkey -e
@@ -22,6 +28,7 @@ bindkey "^[[1;5D" backward-word
 bindkey  "^[[3~"  delete-char
 
 zstyle :compinstall filename '/home/haq/.zshrc'
+zstyle ':completion:*' menu select
 
 # autoload
 autoload -Uz compinit
