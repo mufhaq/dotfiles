@@ -30,6 +30,8 @@ bindkey  "^[[3~"  delete-char
 zstyle :compinstall filename '/home/haq/.zshrc'
 zstyle ':completion:*' menu select
 
+fpath=(~/.config/zsh/plugins/zsh-completions/src/ $fpath)
+
 # autoload
 autoload -Uz compinit
 compinit
