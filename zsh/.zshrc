@@ -29,6 +29,7 @@ bindkey  "^[[3~"  delete-char
 
 zstyle :compinstall filename '/home/haq/.zshrc'
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 
 fpath=(~/.config/zsh/plugins/zsh-completions/src/ $fpath)
 
@@ -53,6 +54,7 @@ alias ls="exa -g --icons"
 alias ll="ls -lh"
 alias lla="ll -a"
 alias l="lla"
+alias etree="exa -T --icons"
 alias clock="tty-clock -scC 4"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
