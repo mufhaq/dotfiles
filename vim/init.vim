@@ -9,7 +9,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set so=4
+set so=5
 set nu
 set mouse=a
 set smartcase
