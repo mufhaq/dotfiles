@@ -140,7 +140,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 workspace_layout tabbed
 #hide_edge_borders both
 exec_always --no-startup-id picom --experimental-backends -b
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 exec --no-startup-id nitrogen --restore
 gaps inner 0
 #border_radius 0
@@ -198,12 +198,12 @@ assign [class="Spotify"] $ws4
 for_window [class="Spotify"] move to workspace $ws4
 
 # Workspace 5
-assign [class="Pcmanfm"] $ws5
+assign [class="discord"] $ws5
+assign [class="Microsoft Teams - Preview"] $ws5
+assign [class="zoom"] $ws5
 
 # workspace 6
-assign [class="libreoffice-startcenter"] $ws6
+assign [class="Pcmanfm"] $ws6
 
 # workspace 7
-assign [class="discord"] $ws7
-assign [class="Microsoft Teams - Preview"] $ws7
-assign [class="zoom"] $ws7
+assign [class="libreoffice-startcenter"] $ws7
