@@ -185,8 +185,10 @@ assign [class="kitty"] $ws2
 
 # Workspace 3
 assign [class="Code"] $ws3
+assign [class="jetbrains-idea"] $ws3
 assign [class="jetbrains-goland"] $ws3
 assign [class="jetbrains-webstorm"] $ws3
+assign [class="jetbrains-phpstorm"] $ws3
 assign [class="jetbrains-datagrip"] $ws3
 assign [class="Gedit"] $ws3
 assign [class="Postman"] $ws3
