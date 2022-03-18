@@ -29,7 +29,11 @@ bindkey  "^[[3~"  delete-char
 
 zstyle :compinstall filename '/home/haq/.zshrc'
 zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
+#zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+autoload -Uz compinit
+compinit
 
 fpath=(~/.config/zsh/plugins/zsh-completions/src/ $fpath)
 
@@ -56,6 +60,7 @@ alias lla="ll -a"
 alias l="lla"
 alias etree="exa -T --icons"
 alias clock="tty-clock -scC 4"
+alias zsh-reload="source ~/.zshrc"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
