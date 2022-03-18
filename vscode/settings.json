@@ -2,13 +2,20 @@
     "workbench.editor.enablePreview": false,
     "workbench.list.smoothScrolling": true,
     "editor.fontSize": 16,
-    "workbench.colorTheme": "One Dark Pro Monokai Darker",
+    "workbench.colorTheme": "GitHub Dark Default",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontWeight": "bold",
     "editor.smoothScrolling": true,
     "editor.cursorStyle": "block",
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.printWidth": 120,
-    "prettier.tabWidth": 4,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.printWidth": 150,
+    "prettier.tabWidth": 2,
     "workbench.startupEditor": "none",
     "editor.minimap.enabled": false,
     "window.menuBarVisibility": "toggle",
@@ -16,5 +23,8 @@
     "explorer.compactFolders": false,
     "explorer.autoReveal": false,
     "editor.wordWrap": "on",
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "explorer.sortOrder": "type",
+    "php.validate.executablePath": "/usr/bin/php",
+    "editor.tabSize": 4
 }
