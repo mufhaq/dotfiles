@@ -140,7 +140,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 workspace_layout tabbed
 #hide_edge_borders both
 exec_always --no-startup-id picom --experimental-backends -b
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 exec --no-startup-id nitrogen --restore
 gaps inner 0
 #border_radius 0
