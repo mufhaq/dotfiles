@@ -1,4 +1,5 @@
 syntax on
+filetype plugin indent on
 
 "set guicursor=
 set relativenumber
@@ -9,7 +10,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set so=999
+set so=5
 set nu
 set mouse=a
 set smartcase
@@ -39,6 +40,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'flazz/vim-colorschemes'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'rust-lang/rust.vim'
+Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 colo gruvbox
@@ -58,6 +62,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" rust config
+let g:rustfmt_autosave = 1
 
 " config for coc.nvim
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
