@@ -14,5 +14,12 @@
     "python.formatting.provider": "autopep8",
     "python.formatting.autopep8Path": "autopep8",
     "rust-analyzer.enable": true,
-    "rust-analyzer.rustfmt.enableRangeFormatting": true
+    "rust-analyzer.rustfmt.enableRangeFormatting": true,
+    "languageserver": {
+        "golang": {
+            "command": "/home/haq/go/bin/gopls",
+            "rootPatterns": ["go.mod"],
+            "filetypes": ["go"]
+        }
+    }
 }

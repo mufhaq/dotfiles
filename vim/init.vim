@@ -61,6 +61,18 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+autocmd FileType go nmap <F5> :! go run % <cr>
+
+" disable vim-go :GoDef short cut (gd)
+" this is handled by LanguageClient [LC]
+let g:go_def_mapping_enabled = 0
+
+" disable scratch preview window
+set completeopt-=preview
+
+" Golang config
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 " rust config
 let g:rustfmt_autosave = 1
