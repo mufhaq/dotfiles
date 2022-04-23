@@ -139,8 +139,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 workspace_layout tabbed
 #hide_edge_borders both
-exec_always --no-startup-id picom --experimental-backends -b
-for_window [class="^.*"] border pixel 0
+#exec_always --no-startup-id picom --experimental-backends -b
+for_window [class="^.*"] border pixel 2
 exec --no-startup-id nitrogen --restore
 gaps inner 0
 #border_radius 0
