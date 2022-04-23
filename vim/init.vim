@@ -43,14 +43,16 @@ Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'rust-lang/rust.vim'
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-colo gruvbox
+colo onedark
 set bg=dark
 hi Normal guibg=NONE ctermbg=NONE
 
 """ Customize colors
-hi Pmenu ctermbg=black ctermfg=white
+"hi Pmenu ctermbg=black ctermfg=white
 
 let NERDTreeShowHidden=1
 let $FZF_DEFAULT_COMMAND="find . ! -path '*.git*' ! -path '*node_modules*'"
@@ -65,7 +67,7 @@ autocmd FileType go nmap <F5> :! go run % <cr>
 
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
-let g:go_def_mapping_enabled = 0
+"let g:go_def_mapping_enabled = 0
 
 " disable scratch preview window
 set completeopt-=preview
