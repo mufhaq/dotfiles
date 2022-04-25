@@ -62,6 +62,8 @@ alias etree="exa -T --icons"
 alias clock="tty-clock -scC 4"
 alias zsh-reload="source ~/.zshrc"
 
+export PATH="/home/haq/.local/bin:$PATH"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
