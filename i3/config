@@ -65,7 +65,7 @@ set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-#set $ws8 "8"
+set $ws8 "8"
 #set $ws9 "9"
 #set $ws10 "10"
 
@@ -209,3 +209,8 @@ assign [class="Pcmanfm"] $ws6
 
 # workspace 7
 assign [class="libreoffice-startcenter"] $ws7
+
+# workspace 8
+assign [class="robloxplayerbeta.exe"] $ws8
+assign [class="robloxplayerlauncher.exe"] $ws8
+assign [class="Steam"] $ws8
