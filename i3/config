@@ -137,7 +137,7 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-workspace_layout tabbed
+#workspace_layout tabbed
 #hide_edge_borders both
 #exec_always --no-startup-id picom --experimental-backends -b
 for_window [class="^.*"] border pixel 2
@@ -211,6 +211,7 @@ assign [class="Pcmanfm"] $ws6
 assign [class="libreoffice-startcenter"] $ws7
 
 # workspace 8
+assign [class="roblox_installer.exe"] $ws8
 assign [class="robloxplayerbeta.exe"] $ws8
 assign [class="robloxplayerlauncher.exe"] $ws8
 assign [class="Steam"] $ws8
