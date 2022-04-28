@@ -32,8 +32,6 @@ zstyle ':completion:*' menu select
 #zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
-autoload -Uz compinit
-compinit
 
 fpath=(~/.config/zsh/plugins/zsh-completions/src/ $fpath)
 
@@ -61,6 +59,7 @@ alias l="lla"
 alias etree="exa -T --icons"
 alias clock="tty-clock -scC 4"
 alias zsh-reload="source ~/.zshrc"
+alias reload="exec zsh"
 
 export PATH="/home/haq/.local/bin:$PATH"
 
