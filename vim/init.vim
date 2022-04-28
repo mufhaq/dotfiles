@@ -63,7 +63,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
 autocmd FileType go nmap <F5> :! go run % <cr>
+autocmd FileType python nmap <F5> :! python % <cr>
 
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
