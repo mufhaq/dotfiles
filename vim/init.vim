@@ -38,18 +38,23 @@ Plug 'neoclide/jsonc.vim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'flazz/vim-colorschemes'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'rust-lang/rust.vim'
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'mhinz/vim-signify'
 call plug#end()
 
 colo onedark
 set bg=dark
 hi Normal guibg=NONE ctermbg=NONE
+
+" include lua file
+luafile /home/haq/.config/nvim/lua/treesitter.lua
 
 """ Customize colors
 "hi Pmenu ctermbg=black ctermfg=white
@@ -63,6 +68,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <C-a> :TSToggle highlight <cr>
 
 autocmd FileType go nmap <F5> :! go run % <cr>
 autocmd FileType python nmap <F5> :! python % <cr>
