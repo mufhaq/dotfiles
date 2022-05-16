@@ -52,6 +52,8 @@ call plug#end()
 colo onedark
 set bg=dark
 hi Normal guibg=NONE ctermbg=NONE
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey
 
 " include lua file
 luafile /home/haq/.config/nvim/lua/treesitter.lua
@@ -72,6 +74,7 @@ nnoremap <C-a> :TSToggle highlight <cr>
 
 autocmd FileType go nmap <F5> :! go run % <cr>
 autocmd FileType python nmap <F5> :! python % <cr>
+autocmd FileType rust nmap <F5> :! rustc % -o out && ./out && rm ./out <cr>
 
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
