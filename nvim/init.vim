@@ -10,7 +10,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set so=5
+set so=100
 set nu
 set mouse=a
 set smartcase
@@ -38,7 +38,6 @@ Plug 'neoclide/jsonc.vim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'flazz/vim-colorschemes'
-"Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'rust-lang/rust.vim'
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
@@ -71,10 +70,18 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-a> :TSToggle highlight <cr>
+nnoremap <S-h> :tabprevious <cr>
+nnoremap <S-l> :tabnext <cr>
 
 autocmd FileType go nmap <F5> :! go run % <cr>
 autocmd FileType python nmap <F5> :! python % <cr>
 autocmd FileType rust nmap <F5> :! rustc % -o out && ./out && rm ./out <cr>
+
+" config for airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_powerline_fonts = 1
+let AirlineTheme="deus"
 
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
