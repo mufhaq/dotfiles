@@ -20,7 +20,6 @@ set incsearch
 set timeoutlen=1000 ttimeoutlen=0
 
 call plug#begin('~/.vim/plugged')
-Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'joshdick/onedark.vim'
@@ -38,7 +37,8 @@ Plug 'neoclide/jsonc.vim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'flazz/vim-colorschemes'
-Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'rust-lang/rust.vim'
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -81,6 +81,10 @@ autocmd FileType rust nmap <F5> :! rustc % -o out && ./out && rm ./out <cr>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#show_tab_nr = 0
 let AirlineTheme="deus"
 
 " disable vim-go :GoDef short cut (gd)
