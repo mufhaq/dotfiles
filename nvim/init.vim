@@ -1,5 +1,5 @@
 syntax on
-filetype plugin indent on
+filetype indent on
 
 "set guicursor=
 set relativenumber
@@ -52,7 +52,7 @@ colo onedark
 set bg=dark
 hi Normal guibg=NONE ctermbg=NONE
 set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey
+hi Visual ctermbg=Blue cterm=bold
 
 " include lua file
 luafile /home/haq/.config/nvim/lua/treesitter.lua
@@ -75,7 +75,9 @@ nnoremap <S-l> :tabnext <cr>
 
 autocmd FileType go nmap <F5> :! go run % <cr>
 autocmd FileType python nmap <F5> :! python % <cr>
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']
 autocmd FileType rust nmap <F5> :! rustc % -o out && ./out && rm ./out <cr>
+autocmd FileType php nmap <F5> :! php % <cr>
 
 " config for airline
 let g:airline#extensions#tabline#enabled = 1

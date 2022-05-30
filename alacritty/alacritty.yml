@@ -42,12 +42,9 @@ colors:
 theme: Hyper
 
 window:
-  dimensions:
-    columns: 0
-    lines: 0
-    padding:
-      y: 5
-      x: 5
+  padding:
+    y: 5
+    x: 5
   dynamic_padding: true
   decorations: none
   #opacity: 0.75
