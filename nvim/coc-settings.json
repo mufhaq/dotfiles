@@ -1,4 +1,5 @@
 {
+    "coc.preferences.jumpCommand": "tab drop",
     "coc.preferences.formatOnSaveFiletypes": [
         "typescript",
         "javascript",
@@ -11,10 +12,10 @@
     "javascript.suggestionActions.enabled": false,
     "prettier.printWidth": 120,
     "prettier.tabWidth": 4,
-    "python.formatting.provider": "autopep8",
-    "python.formatting.autopep8Path": "autopep8",
+    "python.formatting.provider": "black",
+    "python.formatting.autopep8Path": "black",
     "rust-analyzer.enable": true,
-    "rust-analyzer.rustfmt.enableRangeFormatting": true,
+    "python.pythonPath": "python",
     "languageserver": {
         "golang": {
             "command": "/home/haq/go/bin/gopls",
