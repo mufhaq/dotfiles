@@ -10,7 +10,6 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set so=100
 set nu
 set mouse=a
 set smartcase
@@ -18,12 +17,29 @@ set noswapfile
 set nobackup
 set incsearch
 set timeoutlen=1000 ttimeoutlen=0
+"set so=100
 
 call plug#begin('~/.vim/plugged')
+
+" tools
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mhinz/vim-signify'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'voldikss/vim-floaterm'
+
+
+" colorschemes
 Plug 'joshdick/onedark.vim'
 Plug 'ajh17/spacegray.vim'
+Plug 'shaeinst/roshnivim-cs'
+
+" language support
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
@@ -35,17 +51,10 @@ Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/jsonc.vim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'flazz/vim-colorschemes'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'rust-lang/rust.vim'
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mhinz/vim-signify'
+
 call plug#end()
 
 colo onedark
@@ -73,11 +82,27 @@ nnoremap <C-a> :TSToggle highlight <cr>
 nnoremap <S-h> :tabprevious <cr>
 nnoremap <S-l> :tabnext <cr>
 
+" floterm config
+let g:floaterm_width = 0.8
+let g:floaterm_height = 0.8
+hi FloatermBorder guifg=cyan
+
+" language runner
+
+" Without Floaterm
 autocmd FileType go nmap <F5> :! go run % <cr>
-autocmd FileType python nmap <F5> :! python % <cr>
-autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'pyvenv.cfg', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']
-autocmd FileType rust nmap <F5> :! rustc % -o out && ./out && rm ./out <cr>
-autocmd FileType php nmap <F5> :! php % <cr>
+autocmd FileType python nmap <F6> :! python % <cr>
+autocmd FileType rust nmap <F6> :! rustc % -o out && ./out && rm ./out <cr>
+autocmd FileType php nmap <F6> :! php % <cr>
+
+" With Floaterm
+autocmd FileType go nmap <F6> :FloatermNew! --disposable go run % <cr>
+autocmd FileType python nmap <F6> :FloatermNew! --disposable python % <cr>
+autocmd FileType rust nmap <F6> :FloatermNew! --disposable rustc % -o out && ./out && rm ./out <cr>
+autocmd FileType php nmap <F6> :FloatermNew! --disposable php % <cr>
+
+" language config
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'pyvenv.cfg', 'setup.cfg', 'setup.py', 'pyproject.toml']
 
 " config for airline
 let g:airline#extensions#tabline#enabled = 1
@@ -87,11 +112,14 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
-let AirlineTheme="deus"
+
+
+" config for fzf.nvim
+"let g:fzf_layout = { 'down': '40%' }
 
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
-"let g:go_def_mapping_enabled = 0
+let g:go_def_mapping_enabled = 0
 
 " disable scratch preview window
 set completeopt-=preview
