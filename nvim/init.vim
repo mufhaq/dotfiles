@@ -5,7 +5,6 @@ filetype indent on
 set relativenumber
 set nohlsearch
 set hidden
-set cursorline
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -18,6 +17,7 @@ set noswapfile
 set nobackup
 set incsearch
 set timeoutlen=1000 ttimeoutlen=0
+set cursorline
 "set so=100
 
 call plug#begin('~/.vim/plugged')
@@ -61,8 +61,8 @@ call plug#end()
 
 colo onedark
 set bg=dark
-hi Normal guibg=NONE ctermbg=NONE
-hi Visual ctermbg=blue cterm=bold
+hi Normal guibg=none ctermbg=none ctermfg=white
+hi Visual ctermbg=102 cterm=bold
 
 " include lua file
 luafile /home/haq/.config/nvim/lua/treesitter.lua
