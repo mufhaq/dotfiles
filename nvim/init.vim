@@ -5,6 +5,7 @@ filetype indent on
 set relativenumber
 set nohlsearch
 set hidden
+set cursorline
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -32,12 +33,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'voldikss/vim-floaterm'
-
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " colorschemes
 Plug 'joshdick/onedark.vim'
 Plug 'ajh17/spacegray.vim'
 Plug 'shaeinst/roshnivim-cs'
+Plug 'morhetz/gruvbox'
 
 " language support
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -60,11 +62,11 @@ call plug#end()
 colo onedark
 set bg=dark
 hi Normal guibg=NONE ctermbg=NONE
-set cursorline
-hi Visual ctermbg=Blue cterm=bold
+hi Visual ctermbg=blue cterm=bold
 
 " include lua file
 luafile /home/haq/.config/nvim/lua/treesitter.lua
+luafile /home/haq/.config/nvim/lua/indent-blankline.lua
 
 """ Customize colors
 "hi Pmenu ctermbg=black ctermfg=white
@@ -85,16 +87,14 @@ nnoremap <S-l> :tabnext <cr>
 " floterm config
 let g:floaterm_width = 0.8
 let g:floaterm_height = 0.8
-hi FloatermBorder guifg=cyan
+hi FloatermBorder guifg=white
 
 " language runner
-
 " Without Floaterm
 autocmd FileType go nmap <F5> :! go run % <cr>
-autocmd FileType python nmap <F6> :! python % <cr>
-autocmd FileType rust nmap <F6> :! rustc % -o out && ./out && rm ./out <cr>
-autocmd FileType php nmap <F6> :! php % <cr>
-
+autocmd FileType python nmap <F5> :! python % <cr>
+autocmd FileType rust nmap <F5> :! rustc % -o out && ./out && rm ./out <cr>
+autocmd FileType php nmap <F5> :! php % <cr>
 " With Floaterm
 autocmd FileType go nmap <F6> :FloatermNew! --disposable go run % <cr>
 autocmd FileType python nmap <F6> :FloatermNew! --disposable python % <cr>
@@ -112,10 +112,13 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
-
+let g:airline_statusline_ontop = 0
 
 " config for fzf.nvim
 "let g:fzf_layout = { 'down': '40%' }
+
+" config for indent-blankline
+"let g:indent_blankline_viewport_buffer = 1000
 
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
