@@ -12,34 +12,34 @@ font:
 colors:
   # Default colors
   primary:
+    #background: '#282c34'
     background: '#000000'
-    foreground: '#ffffff'
-  cursor:
-    text: '#F81CE5'
-    cursor: '#ffffff'
+    foreground: '#abb2bf'
 
   # Normal colors
   normal:
-    black: '#000000'
-    red: '#fe0100'
-    green: '#33ff00'
-    yellow: '#feff00'
-    blue: '#0066ff'
-    magenta: '#cc00ff'
-    cyan: '#00ffff'
-    white: '#d0d0d0'
+    # NOTE: Use '#131613' for the `black` color if you'd like to see
+    # black text on the background.
+    black: '#282c34'
+    red: '#e06c75'
+    green: '#98c379'
+    yellow: '#d19a66'
+    blue: '#61afef'
+    magenta: '#c678dd'
+    cyan: '#56b6c2'
+    white: '#abb2bf'
 
   # Bright colors
   bright:
-    black: '#808080'
-    red: '#fe0100'
-    green: '#33ff00'
-    yellow: '#feff00'
-    blue: '#0066ff'
-    magenta: '#cc00ff'
-    cyan: '#00ffff'
-    white: '#FFFFFF'
-theme: Hyper
+    black: '#5c6370'
+    red: '#e06c75'
+    green: '#98c379'
+    yellow: '#d19a66'
+    blue: '#61afef'
+    magenta: '#c678dd'
+    cyan: '#56b6c2'
+    white: '#ffffff'
+theme: One-Dark
 
 window:
   padding:
@@ -47,7 +47,7 @@ window:
     x: 5
   dynamic_padding: true
   decorations: none
-  #opacity: 0.75
+  #opacity: 0.75 # only work if using compositor
 
 key_bindings:
   - {
