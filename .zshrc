@@ -60,6 +60,7 @@ alias etree="exa -T --icons"
 alias clock="tty-clock -scC 4"
 alias zsh-reload="source ~/.zshrc"
 alias reload="exec zsh"
+alias emacs="emacs -nw -Q"
 
 export PATH="/home/haq/.local/bin:$PATH"
 
