@@ -1,14 +1,14 @@
 #!/bin/sh
 
 dte() {
-    echo " $(date +"%a, %d/%m/%Y")"
+    echo " $(date +"%u:%d/%m/%Y")"
 }
 
 tme() {
-    echo " $(date +"%T")"
+    echo " $(date +"%R")"
 }
 
-bat() {
+bat_capacity() {
     cap=$(count=$(acpi -b | wc -l); sum=$(acpi -b | egrep -o '[0-9]{1,3}%' | tr -d '%' | xargs -I% echo -n '+%'); echo $(( sum / count )))
     if   [ $cap -ge 0  ] && [ $cap -le 10  ]; then
         cap=" $cap%"
@@ -34,6 +34,15 @@ bat() {
         cap=" UNKNWN"
     fi
     echo $cap
+}
+
+bat_state() {
+    bat0=$(cat /sys/class/power_supply/BAT0/status)
+    bat1=$(cat /sys/class/power_supply/BAT1/status)
+    state=""
+
+    #if [ $bat1 = "Charging" ]; then
+    #fi
 }
 
 cpu() {
@@ -93,7 +102,11 @@ net() {
 
 vol() {
     volume=$(pamixer --get-volume-human)
-    echo " ${volume}"
+    if [ $volume != "muted" ]; then
+        echo " ${volume}"
+    else
+        echo " ${volume}"
+    fi
 }
 
 disk() {
@@ -103,7 +116,7 @@ disk() {
 }
 
 status() {
-    echo " $(backlight) $(vol) $(cpu_temp) $(mem) $(cpu) $(bat) $(net) $(tme) $(dte) "
+    echo " $(backlight) $(vol) $(cpu_temp) $(mem) $(cpu) $(bat_capacity) $(net) $(tme) $(dte)"
 }
 
 while true; do
