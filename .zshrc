@@ -26,6 +26,7 @@ bindkey -M emacs '^[[3^' backward-kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey  "^[[3~"  delete-char
+bindkey '^[[Z' reverse-menu-complete
 
 zstyle :compinstall filename '/home/haq/.zshrc'
 zstyle ':completion:*' menu select
