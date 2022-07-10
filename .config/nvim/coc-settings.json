@@ -6,7 +6,8 @@
         "python",
         "php",
         "html",
-        "css"
+        "css",
+        "lua"
     ],
     "typescript.suggestionActions.enabled": false,
     "javascript.suggestionActions.enabled": false,
@@ -14,13 +15,14 @@
     "prettier.tabWidth": 4,
     "python.formatting.provider": "black",
     "python.formatting.autopep8Path": "black",
-    "rust-analyzer.enable": true,
     "python.pythonPath": "python",
+    "python.analysis.extraPaths": ["__pypackages/<major.minor>/lib"],
     "languageserver": {
         "golang": {
             "command": "/home/haq/go/bin/gopls",
             "rootPatterns": ["go.mod"],
             "filetypes": ["go"]
         }
-    }
+    },
+    "Lua.telemetry.enable": false
 }

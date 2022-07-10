@@ -18,7 +18,10 @@ set nobackup
 set incsearch
 set timeoutlen=1000 ttimeoutlen=0
 set cursorline
-"set so=100
+set ignorecase
+set smartcase
+set so=5
+set termguicolors
 
 call plug#begin('~/.vim/plugged')
 
@@ -33,7 +36,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'voldikss/vim-floaterm'
-Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
+" Plug 'ryanoasis/vim-devicons' Icons without colours
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 
 " colorschemes
 Plug 'joshdick/onedark.vim'
@@ -53,23 +58,23 @@ Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/jsonc.vim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
+Plug 'xiyaowong/coc-sumneko-lua', {'do': 'yarn install --frozen-lockfile'}
 Plug 'rust-lang/rust.vim'
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
-colo onedark
+colo gruvbox
 set bg=dark
-hi Normal guibg=none ctermbg=none ctermfg=white
-hi Visual ctermbg=102 cterm=bold
-
-" include lua file
-luafile /home/haq/.config/nvim/lua/treesitter.lua
-luafile /home/haq/.config/nvim/lua/indent-blankline.lua
+hi Normal guibg=none guifg=white ctermbg=none ctermfg=white
+"hi Visual ctermbg=102 cterm=bold
 
 """ Customize colors
 "hi Pmenu ctermbg=black ctermfg=white
+
+" config for gruvbox (this settings only apply when placed before set the colorschemes
+"let g:gruvbox_contrast_dark = 'hard'
 
 let NERDTreeShowHidden=1
 let $FZF_DEFAULT_COMMAND="find . ! -path '*.git*' ! -path '*node_modules*'"
@@ -84,6 +89,8 @@ nnoremap <C-a> :TSToggle highlight <cr>
 nnoremap <S-h> :tabprevious <cr>
 nnoremap <S-l> :tabnext <cr>
 
+nmap <F7> :bdelete % <cr>
+
 " floterm config
 let g:floaterm_width = 0.8
 let g:floaterm_height = 0.8
@@ -95,11 +102,15 @@ autocmd FileType go nmap <F5> :! go run % <cr>
 autocmd FileType python nmap <F5> :! python % <cr>
 autocmd FileType rust nmap <F5> :! rustc % -o out && ./out && rm ./out <cr>
 autocmd FileType php nmap <F5> :! php % <cr>
+autocmd FileType lua nmap <F5> :! lua % <cr>
+autocmd FileType sh nmap <F5> :! sh % <cr>
 " With Floaterm
 autocmd FileType go nmap <F6> :FloatermNew! --disposable go run % <cr>
 autocmd FileType python nmap <F6> :FloatermNew! --disposable python % <cr>
 autocmd FileType rust nmap <F6> :FloatermNew! --disposable rustc % -o out && ./out && rm ./out <cr>
 autocmd FileType php nmap <F6> :FloatermNew! --disposable php % <cr>
+autocmd FileType lua nmap <F6> :FloatermNew! --disposable lua % <cr>
+autocmd FileType sh nmap <F6> :FloatermNew! --disposable sh % <cr>
 
 " language config
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'pyvenv.cfg', 'setup.cfg', 'setup.py', 'pyproject.toml']
@@ -109,7 +120,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#tab_min_count = 1
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline_statusline_ontop = 0
@@ -117,8 +128,8 @@ let g:airline_statusline_ontop = 0
 " config for fzf.nvim
 "let g:fzf_layout = { 'down': '40%' }
 
-" config for indent-blankline
-"let g:indent_blankline_viewport_buffer = 1000
+" include lua file
+luafile /home/haq/.config/nvim/lua/user/treesitter.lua
 
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
