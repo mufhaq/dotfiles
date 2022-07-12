@@ -36,10 +36,8 @@ local lsp_flags = {
     debounce_text_changes = 150, -- default
 }
 
-local ls_servers = { 'sumneko_lua', 'gopls', 'tsserver' }
-
 require("nvim-lsp-installer").setup {
-    ensure_installed = ls_servers,
+    ensure_installed = { 'sumneko_lua', 'gopls', 'tsserver' },
     automatic_installation = false,
 
     ui = {
