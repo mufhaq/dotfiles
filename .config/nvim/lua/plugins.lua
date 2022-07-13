@@ -16,4 +16,6 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
     use 'onsails/lspkind.nvim'
     use 'nvim-lua/plenary.nvim'
+    use 'nvim-telescope/telescope.nvim'
+    use 'jose-elias-alvarez/null-ls.nvim'
 end)
