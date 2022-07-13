@@ -40,7 +40,14 @@ local lsp_flags = {
 }
 
 require("nvim-lsp-installer").setup({
-	ensure_installed = { "sumneko_lua", "gopls", "tsserver" },
+	ensure_installed = {
+		"sumneko_lua",
+		"gopls",
+		"tsserver",
+		"pyright",
+		"intelephense",
+		"bashls",
+	},
 	automatic_installation = false,
 
 	ui = {

@@ -5,39 +5,6 @@ end
 
 local cmp = require("cmp")
 local luasnip = require("luasnip")
-local lspkind = require("lspkind")
-
-lspkind.init({
-	mode = "symbol_text",
-	preset = "codicons",
-	symbol_map = {
-		Text = "",
-		Method = "",
-		Function = "",
-		Constructor = "",
-		Field = "ﰠ",
-		Variable = "",
-		Class = "ﴯ",
-		Interface = "",
-		Module = "",
-		Property = "ﰠ",
-		Unit = "塞",
-		Value = "",
-		Enum = "",
-		Keyword = "",
-		Snippet = "",
-		Color = "",
-		File = "",
-		Reference = "",
-		Folder = "",
-		EnumMember = "",
-		Constant = "",
-		Struct = "פּ",
-		Event = "",
-		Operator = "",
-		TypeParameter = "",
-	},
-})
 
 cmp.setup({
 	snippet = {
@@ -91,7 +58,34 @@ cmp.setup({
 	}),
 	formatting = {
 		format = function(entry, vim_item)
-			vim_item.kind = lspkind.presets.default[vim_item.kind]
+			local symbol = {
+				Text = " ",
+				Method = " ",
+				Function = " ",
+				Constructor = " ",
+				Field = "ﰠ ",
+				Variable = " ",
+				Class = "ﴯ ",
+				Interface = " ",
+				Module = " ",
+				Property = "ﰠ ",
+				Unit = "塞",
+				Value = " ",
+				Enum = " ",
+				Keyword = " ",
+				Snippet = " ",
+				Color = " ",
+				File = " ",
+				Reference = " ",
+				Folder = " ",
+				EnumMember = " ",
+				Constant = " ",
+				Struct = "פּ ",
+				Event = " ",
+				Operator = " ",
+				TypeParameter = "",
+			}
+			vim_item.kind = symbol[vim_item.kind]
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
 				look = "[Dict]",
@@ -123,7 +117,12 @@ cmp.setup.cmdline("/", {
 cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
-		{ name = "path" },
+		{
+			name = "path",
+			option = {
+				trailing_slash = true,
+			},
+		},
 	}, {
 		{ name = "cmdline" },
 	}),

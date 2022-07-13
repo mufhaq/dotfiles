@@ -17,3 +17,6 @@ vim.api.nvim_set_keymap(
 	[[ <Cmd>lua require('telescope.builtin').buffers()<CR>]],
 	{ noremap = true, silent = true }
 )
+
+-- FZF
+vim.api.nvim_set_keymap("n", "<C-p>", [[ <CMD>Files<CR> ]], { noremap = true, silent = true })

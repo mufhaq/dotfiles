@@ -10,6 +10,12 @@ null_ls.setup({
 			extra_args = { "--tab-width=4" },
 		}),
 		formatting.stylua,
+		formatting.black.with({
+			extra_args = { "--fast" },
+		}),
+		formatting.phpcsfixer.with({
+			extra_args = { "--using-cache=no" },
+		}),
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then

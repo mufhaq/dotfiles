@@ -1,8 +1,13 @@
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
+
+	-- Colorschemes
+	use("morhetz/gruvbox")
+	use("Mofiqul/vscode.nvim")
+
+	-- LSP
 	use("neovim/nvim-lspconfig")
 	use("williamboman/nvim-lsp-installer")
-	use("morhetz/gruvbox")
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = function()
@@ -16,8 +21,9 @@ return require("packer").startup(function(use)
 	use("hrsh7th/nvim-cmp")
 	use("L3MON4D3/LuaSnip")
 	use("saadparwaiz1/cmp_luasnip")
-	use("onsails/lspkind.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("nvim-telescope/telescope.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
+	use({ "junegunn/fzf", run = "./install --bin" })
+	use("junegunn/fzf.vim")
 end)

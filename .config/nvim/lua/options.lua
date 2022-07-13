@@ -1,11 +1,19 @@
-vim.cmd([[ colo gruvbox ]])
-vim.cmd([[ hi Normal guibg=none guifg=white ctermbg=none ctermfg=white ]])
+vim.cmd([[ colo vscode ]])
+--vim.cmd([[ hi Normal guibg=none guifg=white ctermbg=none ctermfg=white ]])
 vim.cmd([[ 
     syntax on
     filetype indent on
 ]])
+vim.cmd([[ 
+    let NERDTreeShowHidden=1
+    let $FZF_DEFAULT_COMMAND="find . ! -path '*.git*' ! -path '*node_modules*'"
+]])
 
-vim.g["gruvbox_contrast_dark"] = "hard"
+-- global
+--vim.g.gruvbox_contrast_dark = "hard"
+vim.g.vscode_italic_comment = 1
+vim.g.vscode_transparent = 1
+vim.o.background = "dark"
 
 vim.opt.relativenumber = true
 vim.opt.hlsearch = false
