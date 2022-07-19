@@ -31,8 +31,10 @@ bindkey '^[[Z' reverse-menu-complete
 
 function zle-line-init () { echoti smkx }
 function zle-line-finish () { echoti rmkx }
-zle -N zle-line-init
-zle -N zle-line-finish
+if [ $TERM = 'st-256color' ] || [ $TERM = 'alacritty' ]; then
+    zle -N zle-line-init
+    zle -N zle-line-finish
+fi
 
 zstyle :compinstall filename '/home/haq/.zshrc'
 zstyle ':completion:*' menu select
@@ -67,10 +69,15 @@ alias etree="exa -T --icons --sort=type"
 alias clock="tty-clock -scC 4"
 alias zsh-reload="source ~/.zshrc"
 alias reload="exec zsh"
-alias emacs="emacs -nw -Q"
+alias emacs="emacs -nw"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper_lazy.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
