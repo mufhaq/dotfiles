@@ -42,8 +42,6 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 
-fpath=(~/.config/zsh/plugins/zsh-completions/src/ $fpath)
-
 # autoload
 autoload -Uz compinit
 compinit
@@ -58,6 +56,8 @@ source ~/.config/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
+fpath=(~/.config/zsh/plugins/zsh-completions/src/ $fpath)
+
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_HIGHLIGHT_STYLES[arg0]="fg=blue"
 
@@ -70,6 +70,7 @@ alias clock="tty-clock -scC 4"
 alias zsh-reload="source ~/.zshrc"
 alias reload="exec zsh"
 alias emacs="emacs -nw"
+alias view="nvim -R -"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
