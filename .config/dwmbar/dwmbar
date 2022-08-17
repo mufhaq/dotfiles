@@ -41,6 +41,8 @@ bat_state() {
     bat1=$(cat /sys/class/power_supply/BAT1/status)
     state=""
 
+    # state known list: Charging, Discharging, Full
+
     #if [ $bat1 = "Charging" ]; then
     #fi
 }
@@ -101,12 +103,20 @@ net() {
 }
 
 vol() {
-    volume=$(pamixer --get-volume-human)
+    volume=$(pamixer --get-volume-human | sed 's/%//')
     if [ $volume != "muted" ]; then
-        echo " ${volume}"
+        if [ $volume -eq 0 ]; then
+            volume="奄 ${volume}%"
+        elif [ $volume -gt 0 ] && [ $volume -le 50 ]; then
+            volume="奔 ${volume}%"
+        else
+            volume="墳 ${volume}%"
+        fi
     else
-        echo " ${volume}"
+        volume="婢 ${volume}"
     fi
+
+    echo $volume
 }
 
 disk() {
