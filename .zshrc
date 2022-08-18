@@ -74,6 +74,7 @@ alias view="nvim -R -"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export EDITOR=nvim
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
