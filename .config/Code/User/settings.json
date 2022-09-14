@@ -2,20 +2,21 @@
     "workbench.editor.enablePreview": false,
     "workbench.list.smoothScrolling": true,
     "editor.fontSize": 16,
-    "workbench.colorTheme": "GitHub Dark Default",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.fontWeight": "bold",
     "editor.smoothScrolling": true,
     "editor.cursorStyle": "block",
     "editor.formatOnSave": true,
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 4,
     },
+    "javascript.suggestionActions.enabled": false,
     "prettier.printWidth": 150,
-    "prettier.tabWidth": 2,
+    "prettier.tabWidth": 4,
     "workbench.startupEditor": "none",
     "editor.minimap.enabled": false,
     "window.menuBarVisibility": "toggle",
@@ -23,8 +24,8 @@
     "explorer.compactFolders": false,
     "explorer.autoReveal": false,
     "editor.wordWrap": "on",
-    "redhat.telemetry.enabled": false,
     "explorer.sortOrder": "type",
     "php.validate.executablePath": "/usr/bin/php",
-    "editor.tabSize": 4
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.cursorStylePerMode.insert": "line",
 }
