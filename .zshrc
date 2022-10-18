@@ -69,7 +69,6 @@ alias etree="exa -T --icons --sort=type"
 alias clock="tty-clock -scC 4"
 alias zsh-reload="source ~/.zshrc"
 alias reload="exec zsh"
-alias emacs="emacs -nw"
 alias view="nvim -R -"
 
 export PATH="$HOME/.local/bin:$PATH"
