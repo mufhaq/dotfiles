@@ -70,8 +70,11 @@ alias zsh-reload="source ~/.zshrc"
 alias reload="exec zsh"
 alias view="nvim -R -"
 
+export GOPATH=$(go env GOPATH)
+
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 export EDITOR=nvim
 
 # export WORKON_HOME=$HOME/.virtualenvs
