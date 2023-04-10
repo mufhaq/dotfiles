@@ -72,7 +72,7 @@ alias view="nvim -R -"
 
 # config for tlmgr
 function check_tlmgr() {
-    local TEXMFDIST='/usr/share/texmf-dist'
+    export TEXMFDIST='/usr/share/texmf-dist'
     local check=(pacman -Qs texlive-most ; grep "local" ; grep "texlive-most")
     if [[ -n $check ]]
     then
