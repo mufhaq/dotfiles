@@ -70,6 +70,17 @@ alias zsh-reload="source ~/.zshrc"
 alias reload="exec zsh"
 alias view="nvim -R -"
 
+# config for tlmgr
+function check_tlmgr() {
+    local TEXMFDIST='/usr/share/texmf-dist'
+    local check=(pacman -Qs texlive-most ; grep "local" ; grep "texlive-most")
+    if [[ -n $check ]]
+    then
+        alias tlmgr="$TEXMFDIST/scripts/texlive/tlmgr.pl --usermode"
+    fi
+}
+check_tlmgr
+
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export EDITOR=nvim
