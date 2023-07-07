@@ -38,3 +38,5 @@ dwmbar &
 nitrogen --restore &
 nm-applet &
 exec dwm
+
+#exec startplasma-x11
