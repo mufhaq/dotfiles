@@ -125,8 +125,13 @@ disk() {
     echo " /=${root} /home=${home}"
 }
 
+caps_lock() {
+    caps=$(xset -q | sed -n 's/^.*Caps Lock:\s*\(\S*\).*$/\1/p')
+    echo "Caps: ${caps}"
+}
+
 status() {
-    echo " $(backlight) $(vol) $(cpu_temp) $(mem) $(cpu) $(bat_capacity) $(net) $(tme) $(dte)"
+    echo " $(backlight) $(vol) $(cpu_temp) $(mem) $(cpu) $(bat_capacity) $(net) $(tme) $(dte) $(caps_lock)"
 }
 
 while true; do
