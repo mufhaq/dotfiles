@@ -84,6 +84,8 @@ check_tlmgr
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export EDITOR=nvim
+export LD_LIBRARY_PATH="/usr/lib/jvm/java-17-openjdk/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/lib/jvm/java-17-openjdk/lib/server:$LD_LIBRARY_PATH"
 
 if type "go" > /dev/null; then
     export GOPATH=$(go env GOPATH)
