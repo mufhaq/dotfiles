@@ -49,4 +49,6 @@ window:
   #opacity: 0.75 # only work if using compositor
 
 key_bindings:
-  - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
+  - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
+  - { key: H, mods: Control|Shift, chars: "\x1B[72;6u" }
+  - { key: L, mods: Control|Shift, chars: "\x1B[76;6u" }
