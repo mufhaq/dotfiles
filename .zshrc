@@ -60,6 +60,7 @@ source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plu
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_HIGHLIGHT_STYLES[arg0]="fg=blue"
+ZSH_HIGHLIGHT_STYLES[comment]='fg=#858585'
 
 alias ls="exa -g --icons --sort=type"
 alias ll="ls -lh"
