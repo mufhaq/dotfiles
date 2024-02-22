@@ -7,6 +7,10 @@
 
         sudo pacman -S $(pacman -Ssq nerd-fonts)
 
+-   Use [nerdfix](https://github.com/loichyan/nerdfix) to check and find obsolete Nerd Fonts Icons:
+
+        nerdfix check <your file>
+
 -   zsh custom plugins:
     -   [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
     -   [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
