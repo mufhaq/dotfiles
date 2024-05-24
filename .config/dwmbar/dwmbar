@@ -73,8 +73,7 @@ backlight() {
   max_brightness=$(brightnessctl m)
   cur_brightness=$(brightnessctl g)
   cur_brightness_percent=$(bc <<<"scale=3; $cur_brightness / $max_brightness * 100" | awk '{print int($1+0.5)}')
-  backlight=$(echo $cur_brightness_percent | awk '{print int($1+0.5)}')
-  echo " $backlight%"
+  echo " $cur_brightness_percent%"
 }
 
 mem() {
