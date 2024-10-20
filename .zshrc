@@ -62,7 +62,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_HIGHLIGHT_STYLES[arg0]="fg=blue"
 ZSH_HIGHLIGHT_STYLES[comment]='fg=#858585'
 
-alias ls="exa -g --icons --sort=type"
+alias ls="exa -H -g --icons --sort=type"
 alias ll="ls -lh"
 alias lla="ll -a"
 alias l="lla"
@@ -92,6 +92,11 @@ if type "go" > /dev/null; then
     export GOPATH=$(go env GOPATH)
     export PATH="$GOPATH/bin:$PATH"
 fi
+
+print -Pn "\e]0;%~\a"
+precmd() { 
+    print -Pn "\e]0;%~\a"
+}
 
 # export WORKON_HOME=$HOME/.virtualenvs
 # export PROJECT_HOME=$HOME/Devel
